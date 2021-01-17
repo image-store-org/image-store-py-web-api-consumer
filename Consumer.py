@@ -1,8 +1,9 @@
 import requests, os
+from api_token import get_token
 
 class Consumer:
     def __init__(self):
-        self.headers = {'Authorization': 'Bearer ' + os.getenv('API_TOKEN')}
+        self.headers = {'Authorization': 'Bearer ' + get_token()}
         self.post_payload = {'title': 'post_test', 'orientation': 'PORTRAIT', 'categories': 
                                 ['NONE', 'ABSTRACT', 'ANIMAL'], 'bytes': [81,109,
                                     70, 122, 90, 83, 65, 50, 78, 67, 66, 84, 100,
